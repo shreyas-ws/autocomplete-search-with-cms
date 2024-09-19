@@ -4,13 +4,11 @@
 
 1. [Introduction](#introduction)
 2. [Setup](#setup)
-   - [Adding the Script](#adding-the-script)
-   - [HTML Structure](#html-structure)
-   - [Custom Attributes](#custom-attributes)
 3. [CMS Integration](#cms-integration)
-4. [Customization](#customization)
-5. [Use Cases](#use-cases)
-6. [Troubleshooting](#troubleshooting)
+4. [Keyboard Shortcuts and Navigation](#keyboard-shortcuts-and-navigation)
+5. [Customization](#customization)
+6. [Use Cases](#use-cases)
+7. [Troubleshooting](#troubleshooting)
 
 ## Introduction
 
@@ -81,9 +79,30 @@ Example:
 3. Design your Collection List Item to display search result information.
 4. Add the required custom attributes to your Collection List Item.
 
+## Keyboard Shortcuts and Navigation
+
+The Advanced Search solution includes several keyboard shortcuts and navigation features to enhance user experience:
+
+| Shortcut                  | Action                                     |
+| ------------------------- | ------------------------------------------ |
+| Ctrl + K (Cmd + K on Mac) | Focus the search input                     |
+| ↓ (Down Arrow)            | Move focus to the next search result       |
+| ↑ (Up Arrow)              | Move focus to the previous search result   |
+| Enter                     | Select the currently focused search result |
+| Esc (Escape)              | Clear the search input and hide results    |
+
+Navigation Behavior:
+
+- When search results are visible, using the arrow keys will cycle through the results.
+- If you reach the end of the list with the down arrow, it will cycle back to the first item.
+- If you reach the beginning of the list with the up arrow, it will cycle to the last item.
+- The currently focused item will be scrolled into view if it's outside the visible area.
+
+Note: Ensure that `tu-autosearch-form-submit="false"` is set on the form to prevent form submission when pressing Enter, allowing for proper keyboard navigation.
+
 ## Customization
 
-### Styling [optional]
+### Styling
 
 Style your search elements using Webflow's design tools:
 
@@ -102,6 +121,10 @@ Example custom CSS:
   background-color: #f0f0f0;
 }
 ```
+
+### JavaScript Customization
+
+To add custom JavaScript, use the "Before </body> tag" section in Project Settings > Custom Code.
 
 ## Use Cases
 
@@ -127,6 +150,7 @@ Example custom CSS:
 - **Search not working**: Ensure all custom attributes are correctly set on your Webflow elements.
 - **Form submitting unexpectedly**: Check if `tu-autosearch-form-submit="false"` is set on the form.
 - **No results not showing**: Verify that the "empty" div is present and has the correct attribute.
+- **Keyboard navigation not working**: Ensure the form has `tu-autosearch-form-submit="false"` set.
 - **Script errors**: Check that the script is added correctly in the project's custom code section.
 - **Styling issues**: Use Webflow's built-in styles wherever possible, and add custom CSS with high specificity.
 
