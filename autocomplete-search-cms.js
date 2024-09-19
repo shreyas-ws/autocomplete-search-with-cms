@@ -49,10 +49,16 @@
         if (isItemMatch) hasMatchingResults = true;
       });
 
-      setSearchElementVisibility(searchNoResultsBlock, !hasMatchingResults);
-      setSearchElementVisibility(searchResultsContainer, hasMatchingResults);
+      setSearchElementVisibility(searchNoResultsBlock, !hasMatchingResults && searchTerm !== '');
+      setSearchElementVisibility(searchResultsContainer, hasMatchingResults || searchTerm !== '');
 
       searchFocusedItemIndex = -1;
+
+      // If there are no matching results and the search term is not empty, show the no results block
+      if (!hasMatchingResults && searchTerm !== '') {
+        setSearchElementVisibility(searchResultsContainer, true);  // Keep the container visible
+        setSearchElementVisibility(searchNoResultsBlock, true);    // Show the no results block
+      }
     }
 
     function handleSearchKeyboardNavigation(event) {
