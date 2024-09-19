@@ -10,7 +10,6 @@
 3. [CMS Integration](#cms-integration)
 4. [Customization](#customization)
    - [Styling](#styling)
-   - [JavaScript Customization](#javascript-customization)
 5. [Use Cases](#use-cases)
 6. [Troubleshooting](#troubleshooting)
 
